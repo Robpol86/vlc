@@ -150,6 +150,7 @@ if [ "${vlcroot}/configure" -nt Makefile ]; then
   ${vlcroot}/extras/package/macosx/configure.sh \
       --build=$TRIPLET \
       --host=$TRIPLET \
+      --disable-chromecast \
       --with-macosx-version-min=$MINIMAL_OSX_VERSION \
       --with-macosx-sdk=$SDKROOT > $out
 fi
