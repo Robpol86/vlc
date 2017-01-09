@@ -287,6 +287,7 @@ static const struct action actions[] =
     { "decr-scalefactor", ACTIONID_SCALE_DOWN, },
     { "deinterlace", ACTIONID_DEINTERLACE, },
     { "deinterlace-mode", ACTIONID_DEINTERLACE_MODE, },
+    { "delete", ACTIONID_DELETE, },
     { "disc-menu", ACTIONID_DISC_MENU, },
     { "faster", ACTIONID_FASTER, },
     { "frame-next", ACTIONID_FRAME_NEXT, },

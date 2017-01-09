@@ -1393,6 +1393,9 @@ static const char *const mouse_wheel_texts[] = {
 #define LOOP_KEY_TEXT N_("Normal/Loop/Repeat")
 #define LOOP_KEY_LONGTEXT N_("Toggle Normal/Loop/Repeat playlist modes")
 
+#define DELETE_KEY_TEXT N_("Delete currently playing file")
+#define DELETE_KEY_LONGTEXT N_("Delete the currently playing file from the file system.")
+
 #define RANDOM_KEY_TEXT N_("Random")
 #define RANDOM_KEY_LONGTEXT N_("Toggle random playlist playback")
 
@@ -2222,6 +2225,7 @@ vlc_module_begin ()
 #   define KEY_UNZOOM             "Shift+z"
 #   define KEY_RANDOM             "Command+z"
 #   define KEY_LOOP               "Shift+l"
+#   define KEY_DELETE             NULL
 
 #   define KEY_CROP_TOP           "Alt+i"
 #   define KEY_UNCROP_TOP         "Alt+Shift+i"
@@ -2338,6 +2342,7 @@ vlc_module_begin ()
 #   define KEY_AUDIODELAY_DOWN    "j"
 #   define KEY_RANDOM             "r"
 #   define KEY_LOOP               "l"
+#   define KEY_DELETE             NULL
 
 #   define KEY_AUDIO_TRACK        "b"
 #   define KEY_SUBTITLE_TRACK     "v"
@@ -2575,6 +2580,8 @@ vlc_module_begin ()
              RANDOM_KEY_TEXT, RANDOM_KEY_LONGTEXT, false )
     add_key( "key-loop", KEY_LOOP,
              LOOP_KEY_TEXT, LOOP_KEY_LONGTEXT, false )
+    add_key( "key-delete", KEY_DELETE,
+             DELETE_KEY_TEXT, DELETE_KEY_LONGTEXT, false)
 
     add_key( "key-viewpoint-fov-in", KEY_VIEWPOINT_FOV_IN,
              VIEWPOINT_FOV_IN_KEY_TEXT, VIEWPOINT_FOV_IN_KEY_TEXT, true )
