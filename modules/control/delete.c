@@ -29,13 +29,13 @@
 #endif
 
 #define VLC_MODULE_LICENSE VLC_LICENSE_GPL_2_PLUS
-//#define KEY_DELETE NULL
-//#define DELETE_KEY_TEXT N_("Delete currently playing file")
-//#define DELETE_KEY_LONGTEXT N_("Delete the currently playing file from the file system.")
+#define KEY_UNSET 0x00000000
+#define KEY_DELETE NULL
+#define DELETE_KEY_TEXT N_("Delete currently playing file")
+#define DELETE_KEY_LONGTEXT N_("Delete the currently playing file from the file system.")
 #include <vlc_common.h>
 #include <vlc_plugin.h>
 #include <vlc_interface.h>
-//#include <vlc_keys.h>
 
 static int Open(vlc_object_t *);
 
@@ -48,7 +48,7 @@ vlc_module_begin ()
     set_capability("interface", 0)
     set_callbacks(Open, NULL)
     set_category(CAT_INTERFACE)
-    // add_key("key-delete", KEY_DELETE, DELETE_KEY_TEXT, DELETE_KEY_LONGTEXT, false)
+    add_key("key-delete", KEY_DELETE, DELETE_KEY_TEXT, DELETE_KEY_LONGTEXT, false)
 vlc_module_end ()
 
 /*****************************************************************************
