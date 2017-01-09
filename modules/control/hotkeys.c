@@ -352,6 +352,17 @@ static int PutAction( intf_thread_t *p_intf, input_thread_t *p_input,
             var_TriggerCallback( p_intf->obj.libvlc, "intf-popupmenu" );
             break;
 
+        case ACTIONID_DELETE:
+        {
+            msg_Info( p_input, "[delete] Getting item..." );
+            playlist_item_t *p_item = playlist_CurrentPlayingItem( p_playlist );
+            msg_Info( p_input, "[delete] Deleting from playlist..." );
+            playlist_NodeDelete( p_playlist, p_item, false );
+            msg_Info( p_input, "[delete] Next track..." );
+            playlist_Next( p_playlist );
+            break;
+        }
+
         /* Playlist actions (including audio) */
         case ACTIONID_LOOP:
         {
